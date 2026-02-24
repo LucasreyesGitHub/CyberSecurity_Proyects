@@ -181,15 +181,3 @@ Este proyecto demuestra conocimiento en:
 
 ---
 
-# 🏁 Conclusión
-
-Este proyecto no es únicamente un portafolio visual.
-
-Es una demostración práctica de:
-
-- Pensamiento orientado a seguridad
-- Aplicación de controles defensivos reales
-- Diseño con enfoque en reducción de riesgo
-- Comprensión de amenazas web comunes
-
-
