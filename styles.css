@@ -2,12 +2,12 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
-  background: #0f172a;
-  color: #e2e8f0;
+  background: #0f172a; /* Fondo oscuro tipo Slate-900 */
+  color: #f8fafc;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -15,54 +15,92 @@ body {
 
 header {
   text-align: center;
-  padding: 2rem 1rem;
+  padding: 3rem 1rem;
+  background: linear-gradient(to bottom, #1e293b, #0f172a);
 }
 
 header h1 {
-  font-size: 2rem;
+  font-size: 2.5rem;
   margin-bottom: 0.5rem;
+  letter-spacing: -1px;
 }
 
 header p {
-  color: #94a3b8;
+  color: #38bdf8; /* Color Cyan para acento */
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 0.85rem;
 }
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-  padding: 2rem;
-  flex: 1;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2.5rem;
+  padding: 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
 }
 
 .card {
   background: #1e293b;
-  border-radius: 12px;
+  border-radius: 16px;
   overflow: hidden;
   text-decoration: none;
   color: white;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Contenedor de imagen que ocupa todo */
+.card-image-container {
+  position: relative;
+  width: 100%;
+  height: 280px; /* Altura de la card */
+  background: #020617;
 }
 
 .card img {
   width: 100%;
-  height: 180px;
-  object-fit: cover;
+  height: 100%;
+  object-fit: cover; /* Esto hace que la imagen llene el espacio sin deformarse */
+  display: block;
+  transition: transform 0.6s ease;
+}
+
+/* Título sobre la imagen con degradado */
+.card-overlay {
+  position: absolute;
+  inset: 0; /* Ocupa todo el espacio */
+  display: flex;
+  align-items: flex-end; /* Texto abajo */
+  padding: 1.5rem;
+  background: linear-gradient(to top, rgba(15, 23, 42, 0.95) 0%, rgba(15, 23, 42, 0.4) 40%, transparent 100%);
 }
 
 .card h2 {
-  padding: 1rem;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.5);
 }
 
+/* Efectos al pasar el mouse */
 .card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 15px rgba(56, 189, 248, 0.2);
+  border-color: #38bdf8;
+}
+
+.card:hover img {
+  transform: scale(1.1);
 }
 
 footer {
   text-align: center;
-  padding: 1rem;
+  padding: 2rem;
   background: #020617;
-  font-size: 0.9rem;
+  color: #64748b;
+  font-size: 0.85rem;
+  margin-top: auto;
 }
