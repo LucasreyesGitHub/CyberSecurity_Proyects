@@ -74,9 +74,10 @@ header p {
   position: absolute;
   inset: 0; /* Ocupa todo el espacio */
   display: flex;
-  align-items: flex-end; /* Texto abajo */
+  flex-direction: column;
+  justify-content: flex-end; /* Texto abajo */
   padding: 1.5rem;
-  background: linear-gradient(to top, rgba(15, 23, 42, 0.95) 0%, rgba(15, 23, 42, 0.4) 40%, transparent 100%);
+  background: linear-gradient(to top, rgba(15, 23, 42, 0.97) 0%, rgba(15, 23, 42, 0.55) 45%, transparent 100%);
 }
 
 .card h2 {
@@ -85,15 +86,68 @@ header p {
   text-shadow: 0 2px 10px rgba(0,0,0,0.5);
 }
 
+.card-desc {
+  font-size: 0.875rem;
+  line-height: 1.4;
+  color: #cbd5e1;
+  margin-top: 0.6rem;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, opacity 0.3s ease, margin-top 0.4s ease;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.75rem;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, opacity 0.3s ease, margin-top 0.4s ease;
+}
+
+.tag {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #38bdf8;
+  background: rgba(56, 189, 248, 0.1);
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  border-radius: 999px;
+  padding: 0.2rem 0.6rem;
+}
+
 /* Efectos al pasar el mouse */
-.card:hover {
+.card:hover,
+.card:focus-visible {
   transform: translateY(-10px);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 15px rgba(56, 189, 248, 0.2);
   border-color: #38bdf8;
 }
 
-.card:hover img {
+.card:hover img,
+.card:focus-visible img {
   transform: scale(1.1);
+}
+
+.card:hover .card-desc,
+.card:focus-visible .card-desc {
+  max-height: 6rem;
+  opacity: 1;
+  margin-top: 0.6rem;
+}
+
+.card:hover .tags,
+.card:focus-visible .tags {
+  max-height: 4rem;
+  opacity: 1;
+  margin-top: 0.75rem;
+}
+
+.card:focus-visible {
+  outline: 2px solid #38bdf8;
+  outline-offset: 4px;
 }
 
 footer {
@@ -103,4 +157,18 @@ footer {
   color: #64748b;
   font-size: 0.85rem;
   margin-top: auto;
+}
+
+.footer-links {
+  margin-top: 0.5rem;
+}
+
+.footer-links a {
+  color: #38bdf8;
+  text-decoration: none;
+}
+
+.footer-links a:hover,
+.footer-links a:focus-visible {
+  text-decoration: underline;
 }

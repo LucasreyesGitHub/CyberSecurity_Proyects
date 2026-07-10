@@ -3,11 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lucas | Cybersecurity Portfolio</title>
+  <title>Lucas Reyes | Cybersecurity Portfolio</title>
+  <meta name="description" content="Portafolio de proyectos de ciberseguridad de Lucas Reyes: herramientas Blue Team / SOC para detección de phishing, análisis de QR y URLs, construidas en Python.">
+  <meta name="theme-color" content="#0f172a">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Lucas Reyes | Cybersecurity Portfolio">
+  <meta property="og:description" content="Herramientas Blue Team / SOC para detección de phishing, análisis de QR y URLs.">
+  <meta property="og:image" content="images/image1.png">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🔐%3C/text%3E%3C/svg%3E">
 
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' https:; style-src 'self' 'unsafe-inline';">
-  <meta http-equiv="X-Content-Type-Options" content="nosniff">
-  <meta http-equiv="X-Frame-Options" content="DENY">
   <meta http-equiv="Referrer-Policy" content="no-referrer">
 
   <link rel="stylesheet" href="styles.css">
@@ -21,26 +29,39 @@
 
   <main class="grid">
 
-    <a href="https://github.com/LucasreyesGitHub/QrSocAnalyzer" 
-       class="card" 
-       target="_blank" 
+    <a href="https://github.com/LucasreyesGitHub/QrSocAnalyzer"
+       class="card"
+       target="_blank"
        rel="noopener noreferrer">
       <div class="card-image-container">
-        <img src="images/image1.png" alt="QR SOC Analyzer">
+        <img src="images/image1.png" alt="QR SOC Analyzer" loading="lazy" decoding="async">
         <div class="card-overlay">
           <h2>QR SOC Analyzer</h2>
+          <p class="card-desc">Decodifica códigos QR y verifica la reputación de las URLs contenidas con la API de VirusTotal, para prevenir ataques de QRishing.</p>
+          <div class="tags">
+            <span class="tag">Python</span>
+            <span class="tag">Flask</span>
+            <span class="tag">VirusTotal API</span>
+            <span class="tag">Docker</span>
+          </div>
         </div>
       </div>
     </a>
 
-    <a href="https://github.com/LucasreyesGitHub/link-sentinel" 
-       class="card" 
-       target="_blank" 
+    <a href="https://github.com/LucasreyesGitHub/link-sentinel"
+       class="card"
+       target="_blank"
        rel="noopener noreferrer">
       <div class="card-image-container">
-        <img src="images/image2.png" alt="LINK SENTINEL">
+        <img src="images/image2.png" alt="Link Sentinel" loading="lazy" decoding="async">
         <div class="card-overlay">
           <h2>Link Sentinel</h2>
+          <p class="card-desc">Analiza URLs con heurísticas locales (SSL, estructura sospechosa) y las cruza contra +70 motores antivirus de VirusTotal para detectar phishing.</p>
+          <div class="tags">
+            <span class="tag">Python</span>
+            <span class="tag">HTML</span>
+            <span class="tag">VirusTotal API</span>
+          </div>
         </div>
       </div>
     </a>
@@ -49,6 +70,9 @@
 
   <footer>
     <p>© 2026 Lucas Reyes - Cybersecurity Portfolio</p>
+    <p class="footer-links">
+      <a href="https://github.com/LucasreyesGitHub" target="_blank" rel="noopener noreferrer">GitHub</a>
+    </p>
   </footer>
 
   <script src="security.js"></script>

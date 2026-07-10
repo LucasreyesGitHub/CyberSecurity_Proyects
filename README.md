@@ -43,11 +43,14 @@ Al permitir únicamente recursos del propio dominio (`'self'`), se elimina la co
 ## 2️⃣ Protección contra Clickjacking
 
 X-Frame-Options: DENY
+Content-Security-Policy: frame-ancestors 'none'
 
 
 ### ✔ Previene:
 - Que el sitio sea embebido dentro de iframes
 - Ataques de UI Redressing
+
+⚠ Nota técnica: `X-Frame-Options` y `X-Content-Type-Options` **no** son respetados por los navegadores cuando se declaran vía `<meta http-equiv>` (solo `Content-Security-Policy` y `Referrer-Policy` funcionan así). Por eso estas dos cabeceras se configuran como cabeceras HTTP reales en `vercel.json`, no en el HTML.
 
 ---
 
@@ -177,7 +180,8 @@ Este proyecto demuestra conocimiento en:
 - Integración de WAF
 - Monitorización de tráfico y análisis de logs
 - Implementación de Subresource Integrity (SRI)
-- Configuración avanzada de HSTS
+
+✅ HSTS y Permissions-Policy ya configurados en `vercel.json`.
 
 ---
 
